@@ -2,4 +2,4 @@ from src.counter import count_ocurrences
 
 
 def test_counter():
-    assert count_ocurrences("src/jobs.csv", "$700M") == 2
+    assert count_ocurrences("src/jobs.csv", "background") == 817
