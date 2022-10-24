@@ -77,12 +77,10 @@ def list_jobs():
 
 @bp.route("/job/<index>")
 def job(index):
-    jobs = read(path="src/jobs.csv")
-    jobs = get_job(jobs, index)
-    build_jobs_urls(jobs)
-    key = {"jobs": jobs}
+    jobs_ = read(path="src/jobs.csv")
+    jobs = get_job(jobs_, index)
 
-    return render_template("job.jinja2", key=key)
+    return render_template("job.jinja2", job=jobs)
 
 
 def init_app(app: Flask):
